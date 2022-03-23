@@ -48,7 +48,7 @@ main {
     padding: 2.5vh 0 1vh 0;
 }
 
-/* GAME GRID STYLING */
+/* GAME GRID CONTAINER STYLING */
 #container {
     height: calc(75% - 40px);
     width: fit-content;
@@ -76,7 +76,7 @@ main {
     background: #555;
 }
 
-/* Game area... */
+/* GAME GRID STYLING */
 
 #game-area {
     display: flex;
@@ -125,7 +125,31 @@ main {
     line-height: 33%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+#keyboard .row div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    border-radius: 15px;
+    border: 5px solid #fff;
+    background: #eee;
+    color: #555;
+}
+
+#keyboard .row div.bigbutton {
+    width: 15%;
+}
+
+#keyboard .row div:hover {
+    background: #ddd;
+}
+
+#keyboard .row div:active {
+    background: #999;
+    color: #fff;
 }
 
 /* OVERLAY */
