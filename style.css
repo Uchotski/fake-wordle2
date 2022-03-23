@@ -161,4 +161,14 @@ main {
 
 #overlay {
     display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content for overlay... */
+
+.content {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
 }
