@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL STYLING */
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    min-width: 350px;
+    height: 100vh;
+    text-align: center;
+    overflow: none;
+}
+
+header {
+    width: 100%;
+    height: 5vh;
+    line-height: 5vh;
+    overflow: none;
+    text-overflow: hidden;
+}
+
+nav {
+    height: 2.5vh;
+    line-height: 2.5vh;
+}
+
+nav ul {
+    overflow-y: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+main {
+    width: 100%;
+    height: 92.5vh;
+    padding: 2.5vh 0 1vh 0;
+}
+
+/* GAME GRID STYLING */
+#game-area {
+    height: 75%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+#game-area .row {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+#game-area .row div {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 5px solid #999;
+}
+
+/* KEYBOARD STYLING */
+
+#keyboard {
+    width: 100%;
+    max-width: 1000px;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#keyboard .row {
+    width: 100%;
+    height: 33%;
+    line-height: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* OVERLAY */
+
+#overlay {
+    display: none;
+}
