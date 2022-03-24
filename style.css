@@ -217,3 +217,9 @@ main {
     color: #f55;
     font-weight: 700;
 }
+
+/* Overlay navigation */
+
+#overlay nav {
+    height: fit-content;
+}
