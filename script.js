@@ -1,0 +1,2 @@
+document.getElementById("menu-button").addEventListener("click", function() { document.getElementById("overlay").style.display = "flex"; });
+document.getElementById("close-button").addEventListener("click", function() { document.getElementById("overlay").style.display = "none"; });
