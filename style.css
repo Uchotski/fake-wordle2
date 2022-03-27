@@ -184,6 +184,7 @@ main {
     position: relative;
     min-width: 300px;
     max-width: 75%;
+    box-shadow: 0 5px 5px 5px #555;
 }
 
 .content div#close-button {
