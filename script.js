@@ -30,13 +30,20 @@ const generateHTML = (rows, columns) => {
             if (j == 0) {
                 htmlToAdd.push(`  <div>${i + 1}</div>`);
             } else {
-                htmlToAdd.push(`  <div></div>`);
+                htmlToAdd.push(`  <div class="game-tile"></div>`);
             }
         }
         htmlToAdd.push(`</div>`);
     }
 
     return htmlToAdd.join("\n");
+}
+
+//Work on this!!
+const resizeGameTiles = () => {
+    const gameTiles = document.getElementById("game-area").getElementsByClassName("game-tile");
+
+    return gameTiles.forEach(tile => tile.style.backgroundColor = "#FFCCFF");
 }
 
 const setGameArea = () => {
