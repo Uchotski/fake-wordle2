@@ -43,6 +43,11 @@ const setGameArea = () => {
     const rows = parseInt(document.getElementById("turns").value, 10);
     const columns = parseInt(document.getElementById("word-length").value, 10);
 
+    if (rows > maxRows || rows < minRows || columns > maxCols || columns < minCols) {
+        return alert("Error! Number of turns must a value between 1 and 99, and word length must be between 1 and 3!");
+    }
+
+    closeMenu();
     return document.getElementById("game-area").innerHTML = generateHTML(rows, columns);
 }
 
@@ -67,6 +72,5 @@ setGameArea(6, 5);
 //EVENT LISTENERS:
 document.getElementById("menu-button").addEventListener("click", openMenu);
 document.getElementById("close-button").addEventListener("click", closeMenu);
-document.getElementById("start-button").addEventListener("click", closeMenu);
 document.getElementById("start-button").addEventListener("click", setGameArea);
 document.getElementById("reset-button").addEventListener("click", resetMenu);
