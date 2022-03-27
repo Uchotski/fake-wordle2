@@ -39,6 +39,9 @@ const setGameArea = () => {
     return document.getElementById("game-area").innerHTML = generateHTML(rows, columns);
 }
 
+//PAGE SET-UP:
+setGameArea(6, 5);
+
 //EVENT LISTENERS:
 document.getElementById("menu-button").addEventListener("click", openMenu);
 document.getElementById("close-button").addEventListener("click", closeMenu);
