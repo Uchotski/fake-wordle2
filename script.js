@@ -1,5 +1,12 @@
-//MENU FUNCTIONS:
+//DEFAULT VALUES:
+const minRows = 1;
+const maxRows = 99;
+const defaultRows = 6;
+const minCols = 3;
+const maxCols = 8;
+const defaultCols = 5;
 
+//MENU FUNCTIONS:
 const openMenu = () => {
     return document.getElementById("overlay").style.display = "flex";
 }
@@ -40,6 +47,21 @@ const setGameArea = () => {
 }
 
 //PAGE SET-UP:
+const setLimits = (minCols, maxCols, defaultCols, minRows, maxRows, defaultRows) => {
+    const rows = document.getElementById("turns");
+    const cols = document.getElementById("word-length");
+
+    cols.min = minCols;
+    cols.max = maxCols;
+    cols.value = defaultCols;
+
+    rows.min = minRows;
+    rows.max = maxRows;
+    rows.value = defaultRows;
+    return;
+}
+
+setLimits(minCols, maxCols, defaultCols, minRows, maxRows, defaultRows);
 setGameArea(6, 5);
 
 //EVENT LISTENERS:
