@@ -13,6 +13,15 @@
         <div class="content">
             <div id="close-button"></div>
             <p>Some content will be displayed, which can be toggled on and off.</p>
+            <div class="form-area">
+                <label for="word-length">Word length:</label>
+                <input type="number" id="word-length" name="word-length" value="5" min="3" max="8"
+                    step="1"></input><br />
+                <label for="turns">Number of Guesses:</label>
+                <input type="number" id="turns" name="turns" value="6" min="1" default="6" max="99"
+                    step="1"></input><br />
+                <button class="primary" id="start">Start!</button><button class="secondary">Reset form</button>
+            </div>
         </div>
     </div>
 

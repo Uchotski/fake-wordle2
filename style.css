@@ -217,3 +217,59 @@ main {
     color: #f55;
     font-weight: 700;
 }
+
+/* Content navbar */
+
+/* Content form */
+
+.formarea {
+    width: 100%;
+    padding: 20px 10%;
+    text-align: left;
+}
+
+.formarea label, .formarea input {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.formarea label {
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+.formarea input {
+    margin-right: 20px;
+    text-align: left;
+    width: 50px;
+}
+
+.formarea button {
+    width: 50%;
+    text-align: center;
+    margin: 20px auto 0 auto;
+    padding: 20px 0;
+    border-radius: 0;
+    font-size: 1.5;
+    border: none;
+    cursor: pointer;
+}
+
+.formarea button.primary {
+    background: green;
+    color: white;
+    font-weight: 700;
+}
+
+.formarea button.primary:hover {
+    background: lightgreen;
+}
+
+.formarea button.secondary {
+    background: gray;
+    color: black;
+}
+
+.formarea button.secondary:hover {
+    background: lightgray;
+}
