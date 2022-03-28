@@ -64,6 +64,19 @@ const setLimits = (minCols, maxCols, defaultCols, minRows, maxRows, defaultRows)
 setLimits(minCols, maxCols, defaultCols, minRows, maxRows, defaultRows);
 setGameArea(6, 5);
 
+//GENERATE A RANDOM WORD:
+
+const generateWord = (num) => {
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    const wordToGuess = [];
+
+    for (let i = 0; i < num; i++) {
+        wordToGuess.push(alphabet[Math.floor(Math.random() * alphabet.length)]);
+    }
+
+    return wordToGuess;
+}
+
 //EVENT LISTENERS:
 document.getElementById("menu-button").addEventListener("click", openMenu);
 document.getElementById("close-button").addEventListener("click", closeMenu);
