@@ -35,16 +35,6 @@ const setGameTileSize = () => {
     }
 }
 
-//LISTENABLE KEYBOARD...
-const keyboardListen = () => {
-    if (event.target.innerHTML.length == 1) {
-        return console.log(event.target.innerHTML);
-    } else {
-        return;
-    }
-}
-
-
 //ADD EVENT LISTENERS:
 document.getElementById("menu-button").addEventListener("click", openMenu);
 document.getElementById("close-button").addEventListener("click", closeMenu);
