@@ -47,7 +47,7 @@ const setGameArea = () => {
     const columns = parseInt(document.getElementById("word-length").value, 10);
 
     if (rows > maxRows || rows < minRows || columns > maxCols || columns < minCols) {
-        return alert("Error! Number of turns must a value between 1 and 99, and word length must be between 1 and 3!");
+        return alert(`Error! Number of turns must a value between ${minRows} and ${maxRows}, and word length must be between ${minCols} and ${maxCols}!`);
     }
 
     closeMenu();
