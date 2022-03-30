@@ -101,6 +101,7 @@ main {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
+    user-select: none;
 }
 
 #game-area .row div:first-of-type {
@@ -135,6 +136,7 @@ main {
 }
 
 #keyboard .row div {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,6 +145,7 @@ main {
     border: 5px solid #fff;
     background: #eee;
     color: #555;
+    user-select: none;
 }
 
 #keyboard .row div.bigbutton {
