@@ -55,4 +55,13 @@ const setGameArea = () => {
     return document.getElementById("game-area").innerHTML = generateHTML(rows, columns);
 }
 
-export { setLimits, setKeyboard, setGameArea }
+//LISTENABLE KEYBOARD...
+const keyboardListen = () => {
+    if (event.target.innerHTML.length == 1) {
+        return console.log(event.target.innerHTML);
+    } else {
+        return;
+    }
+}
+
+export { setLimits, setKeyboard, setGameArea, keyboardListen }

@@ -1,7 +1,7 @@
 //IMPORTS:
 import { minRows, maxRows, defaultRows, minCols, maxCols, defaultCols } from './modules/default-values.js'; //Default Values for cols/rows.
 import { openMenu, closeMenu, resetMenu } from './modules/menu-functions.js'; // Menu toggling and reset options.
-import { setLimits, setKeyboard, setGameArea } from './modules/page-setup.js'; //Limits for input parameters and keyboard layout functions.
+import { setLimits, setKeyboard, setGameArea, keyboardListen } from './modules/page-setup.js'; //Limits for input parameters and keyboard layout functions.
 
 //SET UP THE PAGE:
 setLimits(minCols, maxCols, defaultCols, minRows, maxRows, defaultRows);
@@ -35,10 +35,20 @@ const setGameTileSize = () => {
     }
 }
 
+//LISTENABLE KEYBOARD...
+const keyboardListen = () => {
+    if (event.target.innerHTML.length == 1) {
+        return console.log(event.target.innerHTML);
+    } else {
+        return;
+    }
+}
+
 
 //ADD EVENT LISTENERS:
 document.getElementById("menu-button").addEventListener("click", openMenu);
 document.getElementById("close-button").addEventListener("click", closeMenu);
 document.getElementById("start-button").addEventListener("click", setGameArea);
 document.getElementById("reset-button").addEventListener("click", resetMenu);
+document.getElementById("keyboard").addEventListener("click", keyboardListen);
 window.addEventListener("resize", setGameTileSize);
