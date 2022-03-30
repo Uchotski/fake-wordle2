@@ -54,4 +54,4 @@ const setGameArea = () => {
     return document.getElementById("game-area").innerHTML = generateHTML(rows, columns);
 }
 
-export { setLimits, setKeyboard, generateHTML, setGameArea }
+export { setLimits, setKeyboard, setGameArea }
