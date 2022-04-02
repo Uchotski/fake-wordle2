@@ -17,6 +17,7 @@ const setGameTileSize = () => {
     const gameRows = gameArea.querySelectorAll("div.row");
     const gameRowNumber = gameArea.querySelectorAll("div:not(.row):not(.game-tile)");
     const gameTiles = gameArea.querySelectorAll("div.game-tile");
+    const tileWidth = parseInt(window.getComputedStyle(gameArea.querySelector("div.game-tile")).getPropertyValue("width"), 10);
 
     const changeTileSize = (wordLength) => {
         const tileMargin = parseInt(window.getComputedStyle(gameArea.querySelector("div.game-tile")).getPropertyValue("margin"), 10);
@@ -31,6 +32,9 @@ const setGameTileSize = () => {
     }
 
     if (gameArea.offsetWidth + 10 > keyboard.offsetWidth) {
+        return changeTileSize(columns);
+    } else if (gameArea.offsetWidth + 10 < keyboard.offsetWidth && tileWidth < 100) {
+        console.log("Hello");
         return changeTileSize(columns);
     }
 }
