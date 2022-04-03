@@ -2,6 +2,7 @@
 import { minRows, maxRows, defaultRows, minCols, maxCols, defaultCols } from './modules/default-values.js'; //Default Values for cols/rows.
 import { openMenu, closeMenu, resetMenu } from './modules/menu-functions.js'; // Menu toggling and reset options.
 import { setLimits, setKeyboard, setGameArea, keyboardListen } from './modules/page-setup.js'; //Limits for input parameters and keyboard layout functions.
+import { generateWord } from './modules/game-functions.js';
 
 //SET UP THE PAGE:
 setLimits(minCols, maxCols, defaultCols, minRows, maxRows, defaultRows);
@@ -46,3 +47,6 @@ document.getElementById("start-button").addEventListener("click", setGameArea);
 document.getElementById("reset-button").addEventListener("click", resetMenu);
 document.getElementById("keyboard").addEventListener("click", keyboardListen);
 window.addEventListener("resize", setGameTileSize);
+
+console.log(generateWord(5));
+console.log(generateWord(6));
