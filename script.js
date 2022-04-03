@@ -41,12 +41,15 @@ const setGameTileSize = () => {
 }
 
 //ADD EVENT LISTENERS:
+//Menu functions:
 document.getElementById("menu-button").addEventListener("click", openMenu);
 document.getElementById("close-button").addEventListener("click", closeMenu);
 document.getElementById("start-button").addEventListener("click", setGameArea);
 document.getElementById("reset-button").addEventListener("click", resetMenu);
-document.getElementById("keyboard").addEventListener("click", keyboardListen);
-window.addEventListener("resize", setGameTileSize);
 
-console.log(generateWord(5));
-console.log(generateWord(6));
+//Keyboard listeners:
+document.getElementById("keyboard").addEventListener("click", keyboardListen);
+document.addEventListener("keydown", keyboardListen);
+
+//Aesthetics:
+window.addEventListener("resize", setGameTileSize);

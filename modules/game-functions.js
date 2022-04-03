@@ -18,6 +18,9 @@ const keyboardListen = () => {
 
     //typeWord allows for visible output on the Game Area.
     const typeWord = (keyboardInput) => {
+
+        if (!/[A-Za-z]/.test(keyboardInput)) { return; } // Blocks invalid input.
+
         const columns = document.getElementById("word-length").value;
         const rows = document.getElementById("turns").value;
         const rowToEdit = document.getElementById("game-area").getElementsByClassName("row")[rowIndex];
@@ -26,7 +29,7 @@ const keyboardListen = () => {
             if (colIndex == columns) { return; } //Break point.
             rowToEdit.getElementsByClassName("game-tile")[colIndex].innerHTML = keyboardInput.toUpperCase();
             return colIndex++;
-        } else if (keyboardInput.toLowerCase() == "delete") {
+        } else if (keyboardInput.toLowerCase() == "delete" || keyboardInput.toLowerCase() == "backspace") {
             if (colIndex == 0) { return; } //Break point.
             colIndex--;
             return rowToEdit.getElementsByClassName("game-tile")[colIndex].innerHTML = "";
@@ -36,11 +39,18 @@ const keyboardListen = () => {
             colIndex = 0;
             return rowIndex++;
         } else {
-            return console.log("Something abnormal occurred!");
+            return console.log("Something abnormal occurred or an invalid key was pressed!");
         }
     }
 
-    return typeWord(event.target.innerHTML);
+    //Handles output based on event trigger type.
+    if (event.type == "click") {
+        return typeWord(event.target.innerHTML);
+    } else if (event.type == "keydown") {
+        return typeWord(event.key);
+    } else {
+        return "An error occured!";
+    }
 }
 
 export { generateWord, keyboardListen }
