@@ -1,8 +1,8 @@
 //IMPORTS:
 import { minRows, maxRows, defaultRows, minCols, maxCols, defaultCols } from './modules/default-values.js'; //Default Values for cols/rows.
 import { openMenu, closeMenu, resetMenu } from './modules/menu-functions.js'; // Menu toggling and reset options.
-import { setLimits, setKeyboard, setGameArea, keyboardListen } from './modules/page-setup.js'; //Limits for input parameters and keyboard layout functions.
-import { generateWord } from './modules/game-functions.js';
+import { setLimits, setKeyboard, setGameArea } from './modules/page-setup.js'; //Limits for input parameters and keyboard layout functions.
+import { generateWord, keyboardListen } from './modules/game-functions.js';
 
 //SET UP THE PAGE:
 setLimits(minCols, maxCols, defaultCols, minRows, maxRows, defaultRows);
