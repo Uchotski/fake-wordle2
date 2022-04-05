@@ -1,3 +1,5 @@
+import { closeMenu } from './menu-functions.js';
+
 //FUNCTION TO GENERATE A NEW WORD OF A SPECIFIED LENGTH (AS AN ARRAY);
 const generateWord = (wordLength) => {
     const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -51,6 +53,18 @@ const keyboardListen = () => {
     } else {
         return "An error occured!";
     }
+}
+
+//THIS IS THE GAME!
+const gameStart = () => {
+    //Closes the start menu to begin the game.
+    console.log("The game has started!");
+    closeMenu();
+
+    //Makes the game area typeable.
+    document.getElementById("keyboard").addEventListener("click", keyboardListen);
+    document.addEventListener("onkeydown", keyboardListen);
+
 }
 
 export { generateWord, keyboardListen }
