@@ -42,7 +42,7 @@ const setKeyboard = () => {
         return outputHTML.join("\n");
     }
 
-    return keyboardArea.innerHTML = generateHTML(keyboardToUse);
+    return keyboardArea.innerHTML = generateHTML(qwerty);
 }
 
 //GAME LAYOUT:
