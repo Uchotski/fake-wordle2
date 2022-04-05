@@ -18,9 +18,31 @@ const setLimits = (minCols, maxCols, defaultCols, minRows, maxRows, defaultRows)
 }
 
 /* Write this later */
-/* Objective is to change keyboard layouts between Dvorak and QWERTY */
+/* Objective is to change keyboard layouts between QWERTY, QWERTZ and Dvorak */
 const setKeyboard = () => {
-    console.log("The keyboard has been set!");
+    const qwerty = [["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"], ["a", "s", "d", "f", "g", "h", "j", "k", "l"], ["enter", "z", "x", "c", "v", "b", "n", "m", "delete"]];
+    const qwertz = [["q", "w", "e", "r", "t", "z", "u", "i", "o", "p"], ["a", "s", "d", "f", "g", "h", "j", "k", "l"], ["enter", "y", "x", "c", "v", "b", "n", "m", "delete"]];
+    const dvorak = [["enter", "p", "y", "f", "g", "c", "r", "l", "delete"], ["a", "o", "e", "u", "i", "d", "h", "t", "n", "s"], ["q", "j", "k", "x", "b", "m", "w", "v", "z"]];
+    const keyboardArea = document.getElementById("keyboard");
+    const generateHTML = (keyboardLayout) => {
+        const outputHTML = [];
+
+        for (let i = 0; i < keyboardLayout.length; i++) {
+            outputHTML.push('<div class="row">');
+            keyboardLayout[i].forEach(key => {
+                if (key.length != 1) {
+                    outputHTML.push(`  <div id="${key}" class="bigbutton">${key.toUpperCase()}</div>`);
+                } else {
+                    outputHTML.push(`  <div id="${key}">${key.toUpperCase()}</div>`);
+                }
+            });
+            outputHTML.push('</div>');
+        }
+
+        return outputHTML.join("\n");
+    }
+
+    return keyboardArea.innerHTML = generateHTML(keyboardToUse);
 }
 
 //GAME LAYOUT:
