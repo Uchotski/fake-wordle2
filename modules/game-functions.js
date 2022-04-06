@@ -38,6 +38,7 @@ const keyboardListen = () => {
         } else if (keyboardInput.toLowerCase() == "enter") {
             if (colIndex != columns || rowIndex == rows) { return; } //Break point.
             console.log("Function to enter guess goes here!");
+            processAnswer();
             colIndex = 0;
             return rowIndex++;
         } else {
@@ -55,8 +56,23 @@ const keyboardListen = () => {
     }
 }
 
+//MANAGES GUESS HANDLING:
+
+const processAnswer = () => {
+    const collectAnswer = () => {
+        const collectedGuess = [];
+        const rowWithGuess = document.getElementById("game-area").getElementsByClassName("row")[rowIndex].querySelectorAll("div.game-tile");
+
+        rowWithGuess.forEach(item => collectedGuess.push(item.innerHTML.toLowerCase()));
+        
+        return console.log(collectedGuess);
+    }
+
+    return collectAnswer();
+}
+
 //THIS IS THE GAME!
-const gameStart = () => {
+const startGame = () => {
     //Closes the start menu to begin the game.
     console.log("The game has started!");
     closeMenu();
@@ -71,4 +87,4 @@ const gameStart = () => {
     console.log(newWord);
 }
 
-export { generateWord, keyboardListen }
+export { generateWord, keyboardListen, startGame, processAnswer }
