@@ -65,6 +65,10 @@ const gameStart = () => {
     document.getElementById("keyboard").addEventListener("click", keyboardListen);
     document.addEventListener("onkeydown", keyboardListen);
 
+    //Generates a new word.
+    const wordLength = document.getElementById("word-length").value;
+    const newWord = generateWord(wordLength);
+    console.log(newWord);
 }
 
 export { generateWord, keyboardListen }
