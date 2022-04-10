@@ -59,19 +59,34 @@ const keyboardListen = () => {
 //MANAGES GUESS HANDLING:
 
 const processAnswer = () => {
+    //Row with the guess...
+    const rowWithGuess = document.getElementById("game-area").getElementsByClassName("row")[rowIndex].querySelectorAll("div.game-tile");
+
+    //Returns the guessed input as an array.
     const collectAnswer = () => {
         const collectedGuess = [];
-        const rowWithGuess = document.getElementById("game-area").getElementsByClassName("row")[rowIndex].querySelectorAll("div.game-tile");
-
-        rowWithGuess.forEach(item => collectedGuess.push(item.innerHTML.toLowerCase()));
         
-        return console.log(collectedGuess);
+        rowWithGuess.forEach(item => collectedGuess.push(item.innerHTML.toLowerCase()));
+        return collectedGuess;
     }
 
-    return collectAnswer();
+    //Changes the background colour of the tiles based on the guess.
+    const changeBackground = (guess, answer) => {
+        const correct = "green";
+        const partialCorrect = "orange";
+        const incorrect = "gray";
+    }
+
+    const wordToGuess = newWord;
+    const guessedWord = collectAnswer();
+
+    console.log(guessedWord, wordToGuess);
+    return changeBackground(guessedWord, wordToGuess);
 }
 
 //THIS IS THE GAME!
+let newWord;
+
 const startGame = () => {
     //Closes the start menu to begin the game.
     console.log("The game has started!");
@@ -83,7 +98,7 @@ const startGame = () => {
 
     //Generates a new word.
     const wordLength = document.getElementById("word-length").value;
-    const newWord = generateWord(wordLength);
+    newWord = generateWord(wordLength);
     console.log(newWord);
 }
 
