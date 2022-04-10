@@ -75,6 +75,49 @@ const processAnswer = () => {
         const correct = "green";
         const partialCorrect = "orange";
         const incorrect = "gray";
+        const textColor = "#FFF";
+
+        let checkedLetters = [];
+        for (let i = 0; i < answer.length; i++) {
+            if (checkedLetters.indexOf(guess[i]) > -1) { continue; } //Skips if the letter in question has already been checked.
+            checkedLetters.push(guess[i]); //Adds the letter being checked to an array of letters which have been checked this turn.
+            console.log("The letter we are checking the answer for is: ", guess[i]);
+
+            //While the answer still contains the letter being assessed from the guess:
+            //checks for all indexes where that letter appears and puts it in the arrayOfIndicies array.
+            let arrayOfIndicies = []; //This array will contain all indicies where the guessed letter is within the answer.
+            let j = 0;
+            while (answer.indexOf(guess[i], j) > -1) {
+                const index = answer.indexOf(guess[i], j);
+                arrayOfIndicies.push(index);
+                j = index + 1;
+            }
+            console.log(arrayOfIndicies);
+
+            //Changes the styling of the letters and keyboard based on the arrayOfIndicies:
+            if (arrayOfIndicies.length > 0) {
+                arrayOfIndicies.forEach(index => {
+                    console.log(`Checking index: ${index}!`);
+                    console.log(answer, guess);
+                    if (answer[index] === guess[index]) {
+                        rowWithGuess[index].style.backgroundColor = correct;
+                        rowWithGuess[index].style.color = textColor;
+                        console.log(answer[index], guess[index]);
+                        console.log(answer.filter(item => item.match(`${answer[index]}`)).length);
+                    } else if (answer[index] != guess[index] && arrayOfIndicies.length >= answer.filter(item => item.match(`${answer[index]}`)).length) {
+                        rowWithGuess[index].style.backgroundColor = partialCorrect;
+                        rowWithGuess[index].style.color = textColor;
+                    } else {
+                        rowWithGuess[index].style.backgroundColor = incorrect;
+                        rowWithGuess[index].style.color = textColor;
+                    }
+                });
+            } else {
+                //Needs to change ALL of the incorrect letters (if guessing multiple letters...)
+                rowWithGuess[i].style.backgroundColor = incorrect;
+                rowWithGuess[i].style.color = textColor;
+            }
+        }
     }
 
     const wordToGuess = newWord;
